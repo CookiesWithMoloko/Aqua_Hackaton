@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Chakra+Petch&family=Open+Sans&family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: #26A69A;
+}
+header .content{
+    width: 85%;
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .content img{
+    height: 100px;
+}
+header .content span{
+    text-align: right;
+    color: #eaeaea;
+    font-size: 16px;
+    font-family: 'Open Sans';
+}
+main{
+    padding-top: 40px;
+}
+input[type=text]{
+    width: 60%;
+    padding: 10px;
+    border-radius: 6px;
+    outline: none;
+    border: 0;
+    box-shadow: 0 0 1px 0;
+    font-size: 20px;
+    font-family: 'Open Sans';
+}
+.org{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.org-title{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 5px;
+    display: none;
+}
+.org-title__inner{
+    background: #fff;
+    box-shadow: 0 0 2px 0;
+    width: 60%;
+    padding: 10px;
+    border-radius: 6px;
+    list-style: none;
+}

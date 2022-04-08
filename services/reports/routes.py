@@ -1,7 +1,7 @@
 from app import app, db
 from flask import request, abort
 from .models.report import Report
-from tags import get_tags
+from .tags import get_tags
 from hashlib import md5
 import re
 
