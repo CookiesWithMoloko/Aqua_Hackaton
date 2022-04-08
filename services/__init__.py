@@ -1,1 +1,1 @@
-from services import authorization, reports
+from services import authorization, reports, view

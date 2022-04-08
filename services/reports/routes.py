@@ -1,9 +1,11 @@
 from app import app, db
 from flask import request, abort
 from .models.report import Report
+from tags import get_tags
+from hashlib import md5
 import re
 
-EMAIL_PATTERN = re.compile('.+@.+\..+')
+EMAIL_PATTERN = re.compile(r'.+@.+\..+')
 PASSPORT_PATTERN = re.compile('[0-9]{4} [0-9]{6}')
 def isNone(a):
     return a is None or a == ''
@@ -21,12 +23,16 @@ def add_report():
         abort(400)
     if not PASSPORT_PATTERN.match(passport):
         abort(404)
+    tags = ''.join(f'{i},' for i in get_tags(content))
+    group = md5(tags + organization).hexdigest()
     db.session.add(Report(
         organization=organization.lower(),
         target=target,
         target_organization=isNone(target),
         email=email,
-        content=content
+        content=content,
+        tags=tags,
+        group=group
     ))
 
 
