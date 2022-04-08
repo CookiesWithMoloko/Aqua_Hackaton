@@ -9,7 +9,6 @@ def isNone(a):
     return a is None or a == ''
 @app.post('/reports/add/')
 def add_report():
-    """read form"""
     organization = request.form.get('organization', None, str)
     target = request.form.get('target', None, str)
     author = request.form.get('author', None, str)

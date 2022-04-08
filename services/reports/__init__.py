@@ -1,1 +1,1 @@
-from ..reports import models
+from ..reports import models, routes

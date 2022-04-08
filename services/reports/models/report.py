@@ -13,3 +13,5 @@ class Report(db.Model):
     # m
     tags = db.Column(db.Text, unique=False)
     group = db.Column(db.String(16), unique=False, nullable=False)
+
+    content = db.Column(db.Text, nullable=False)
