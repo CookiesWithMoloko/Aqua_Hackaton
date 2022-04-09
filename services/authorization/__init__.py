@@ -1,1 +1,1 @@
-from ..authorization import models
+from ..authorization import models, routes

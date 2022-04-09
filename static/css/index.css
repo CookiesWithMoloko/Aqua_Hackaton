@@ -47,6 +47,8 @@ input[type=text]{
     justify-content: center;
     width: 100%;
     padding-top: 5px;
+}
+.org-title.hidden{
     display: none;
 }
 .org-title__inner{

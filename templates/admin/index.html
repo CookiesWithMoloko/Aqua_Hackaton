@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Административная панель</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/index.css') }}">
+</head>
+<body>
+    <div class="reg">
+        <h1>Авторизация</h1>
+    </div>
+    <div class="menu">
+        <a class="button" href="{{ url_for('.admin_login', mode='first_check') }}"> Модерация</a>
+        <a class="button" href="{{ url_for('.admin_login', mode='second_check') }}"> Обработка</a>
+        <a class="button" href="{{ url_for('.admin_login', mode='statistics') }}"> Статистика</a>
+    </div>
+</body>
+</html>
