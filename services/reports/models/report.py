@@ -1,7 +1,8 @@
 from app import db
-
+from sqlalchemy.sql import func
 class Report(db.Model):
     id = db.Column(db.Integer, unique=True, primary_key=True, autoincrement=True)
+    created = db.Column(db.DateTime, server_default=func.now())
     # c
     author = db.Column(db.String(150), unique=False)
     passport = db.Column(db.String(12), unique=False, nullable=False)
