@@ -15,3 +15,4 @@ class Report(db.Model):
     group = db.Column(db.String(16), unique=False, nullable=False)
 
     content = db.Column(db.Text, nullable=False)
+    rating = db.Column(db.Integer, default=1)

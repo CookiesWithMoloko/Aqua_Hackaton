@@ -17,12 +17,15 @@ def add_report():
     email = request.form.get('email', None, str)
     content = request.form.get('content', None, str)
     passport = request.form.get('passport', None, str)
-    if len(filter(isNone, [organization, author, email, content, passport])) != 0:
+    rating = request.form.get('rating', None, int)
+    if len(filter(isNone, [organization, author, email, content, passport, rating])) != 0:
         abort(400)
     if not EMAIL_PATTERN.match(email):
         abort(400)
     if not PASSPORT_PATTERN.match(passport):
-        abort(404)
+        abort(400)
+    if rating > 10 or rating < 1:
+        abort(400)
     tags = ''.join(f'{i},' for i in get_tags(content))
     group = md5(tags + organization).hexdigest()
     db.session.add(Report(
@@ -32,7 +35,8 @@ def add_report():
         email=email,
         content=content,
         tags=tags,
-        group=group
+        group=group,
+        rating=rating
     ))
 
 
